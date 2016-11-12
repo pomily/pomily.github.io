@@ -23,7 +23,7 @@ const buttonStyles = css`
   margin: 0 auto;
   text-align: center;
   transition: .5s;
-  &:active {
+  &:hover {
     background: #5E5E60;
     color: #fff;
     width: 240px;

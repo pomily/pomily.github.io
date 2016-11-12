@@ -1,13 +1,10 @@
 import styled from 'styled-components';
 
-
-const Container = styled.div`
+const LogoContainer = styled.div`
 
 	background-color: #FFF8EF;
 	width: 100vw;
 	height: 35vh;
-	padding-top: 14vh;
-
 `;
 
-export default Container;
+export default LogoContainer;

@@ -11,7 +11,6 @@ import React, { PropTypes, Children } from 'react';
 import A from './A';
 import StyledButton from './StyledButton';
 import Wrapper from './Wrapper';
-import Container from './Container';
 
 
 function Button(props) {
@@ -33,11 +32,9 @@ function Button(props) {
   }
 
   return (
-    <Container>
       <Wrapper>
         {button}
       </Wrapper>
-    </Container>
   );
 }
 

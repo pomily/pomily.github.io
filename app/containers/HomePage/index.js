@@ -15,8 +15,11 @@ import Helmet from 'react-helmet';
 import { FormattedMessage } from 'react-intl';
 import messages from './messages';
 import Button from 'components/Button';
+import ButtonContainer from './ButtonContainer';
 import Logo from 'components/Logo';
+import LogoContainer from './LogoContainer';
 import StepAnimation from 'components/StepAnimation';
+import StepAnimationContainer from './StepAnimationContainer';
 
 export default class HomePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   render() {
@@ -33,11 +36,22 @@ export default class HomePage extends React.PureComponent { // eslint-disable-li
     			]}
     		/>
     		<div>
-    			<Logo />
-    			<StepAnimation />
-    			<Button href={href}>
-    				{children}
-    			</Button>
+
+                <LogoContainer>
+    			    <Logo />
+                </LogoContainer>
+
+                <StepAnimationContainer>
+                    <StepAnimation />
+                </StepAnimationContainer>
+
+    			<ButtonContainer>
+                    <Button href={href}>
+                        {children}
+                    </Button>
+                </ButtonContainer>
+    			
+
     		</div>
     	</article>
     );

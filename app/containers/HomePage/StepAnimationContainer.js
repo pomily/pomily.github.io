@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 
-const Container = styled.div`
+const StepAnimationContainer = styled.div`
   background-color: #FFF8EF;
   width: 100vw; 
   height: 30vh;
@@ -10,4 +10,4 @@ const Container = styled.div`
   padding-top: 9vh;
 `;
 
-export default Container;
+export default StepAnimationContainer;
