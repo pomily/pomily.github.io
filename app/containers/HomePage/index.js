@@ -10,15 +10,36 @@
  */
 
 import React from 'react';
+import Helmet from 'react-helmet';
+
 import { FormattedMessage } from 'react-intl';
 import messages from './messages';
+import Button from 'components/Button';
+import Logo from 'components/Logo';
+import StepAnimation from 'components/StepAnimation';
 
 export default class HomePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   render() {
+
+  	const href = '#';
+  	const children = (<h3>E X P L O R E</h3>);
+
     return (
-      <h1>
-        <FormattedMessage {...messages.header} />
-      </h1>
+    	<article>
+    		<Helmet
+    			title="ARK Studio"
+    			meta={[
+    				{ name: 'description', content: 'we build cool stuff.' }
+    			]}
+    		/>
+    		<div>
+    			<Logo />
+    			<StepAnimation />
+    			<Button href={href}>
+    				{children}
+    			</Button>
+    		</div>
+    	</article>
     );
   }
 }
