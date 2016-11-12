@@ -5,16 +5,16 @@ const translate = keyframes `
 		background-position: 0px; 
 	}
 	to {
-		background-position: -8000px;
+		background-position: -6400px;
 	}
 `;
 
 const Animation = styled.div`
   background-image: url(${props => props.src});
-  background-size: 8000px 300px;
+  background-size: 6400px 240px;
   background-repeat: none;
-  width: 8000px;
-  height: 300px;
+  width: 6400px;
+  height: 240px;
   background-position: 0, 0;
   animation:${translate} 1.1s infinite steps(20);
 `;

@@ -11,13 +11,16 @@ import React, { PropTypes, Children } from 'react';
 import A from './A';
 import StyledButton from './StyledButton';
 import Wrapper from './Wrapper';
+import Container from './Container';
+
 
 function Button(props) {
   // Render an anchor tag
   let button = (
-    <A href={props.href} onClick={props.onClick}>
-      {Children.toArray(props.children)}
-    </A>
+        <A href={props.href} onClick={props.onClick}>
+         
+            {Children.toArray(props.children)}
+        </A>
   );
 
   // If the Button has a handleRoute prop, we want to render a button
@@ -30,9 +33,11 @@ function Button(props) {
   }
 
   return (
-    <Wrapper>
-      {button}
-    </Wrapper>
+    <Container>
+      <Wrapper>
+        {button}
+      </Wrapper>
+    </Container>
   );
 }
 

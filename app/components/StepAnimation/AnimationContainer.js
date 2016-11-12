@@ -2,9 +2,8 @@ import styled from 'styled-components';
 
 
 const AnimationContainer = styled.div`
-  top: 50%;
-  width: 400px;
-  height: 300px;
+  width: 320px;
+  height: 240px;
   overflow: hidden;
   margin: 0 auto;
 `;

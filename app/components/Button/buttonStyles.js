@@ -3,9 +3,9 @@ import { css } from 'styled-components';
 const buttonStyles = css`
   display: inline-block;
   box-sizing: border-box;
-  padding: 0.25em 2em;
+  padding: 0em 3.8em;
   text-decoration: none;
-  border-radius: 4px;
+  border-radius: 15px;
   -webkit-font-smoothing: antialiased;
   -webkit-touch-callout: none;
   user-select: none;
@@ -13,13 +13,20 @@ const buttonStyles = css`
   outline: 0;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: bold;
-  font-size: 16px;
-  border: 2px solid #41addd;
-  color: #41addd;
-
+  font-size: 13px;
+  border: 2px solid #5E5E60;
+  color: #5E5E60;
+  height: 34px;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  text-align: center;
+  transition: .5s;
   &:active {
-    background: #41addd;
+    background: #5E5E60;
     color: #fff;
+    width: 240px;
   }
 `;
 

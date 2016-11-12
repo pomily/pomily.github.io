@@ -9,16 +9,22 @@ import React from 'react';
 
 import A from './A';
 import Img from './Img';
-import LogoImg from './logo-top.png';
-import LogoText from './logo-bottom.png';
+import Container from './Container';
+import Group from './Group';
+import LogoImg from './logo-top.svg';
+import LogoText from './logo-bottom.svg';
 
 function Logo(props) {
 	return (
 		<div>
-			<A href="#">
-				<Img src={LogoImg} alt="ARK Studio - Logo" />
-				<Img src={LogoText} alt="description" />
-			</A>
+			<Container>
+				<Group>
+					<A href="#">
+						<Img src={LogoImg} alt="ARK Studio - Logo" />
+						<Img src={LogoText} alt="description" />
+					</A>
+				</Group>
+			</Container>
 		</div>
 	);
 }
