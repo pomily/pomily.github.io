@@ -1,15 +1,15 @@
 {
-  "name": "react-boilerplate",
-  "version": "3.3.3",
-  "description": "A highly scalable, offline-first foundation with the best DX and a focus on performance and best practices",
+  "name": "ark_site",
+  "version": "1.0.0",
+  "description": "a cool site for cool cats.",
   "repository": {
     "type": "git",
-    "url": "git://github.com/mxstbr/react-boilerplate.git"
+    "url": "git@github.com:kevinwu127/ark_site.git"
   },
   "engines": {
     "npm": ">=3"
   },
-  "author": "Max Stoiber",
+  "author": "ARK Design Studio, LLC",
   "license": "MIT",
   "scripts": {
     "analyze:clean": "rimraf stats.json",
