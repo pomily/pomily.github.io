@@ -25,7 +25,7 @@ export default class HomePage extends React.PureComponent { // eslint-disable-li
   render() {
 
   	const href = '#';
-  	const children = (<h3>E X P L O R E</h3>);
+  	const children = (<h3>S O O N</h3>);
 
     return (
     	<article>
@@ -46,9 +46,7 @@ export default class HomePage extends React.PureComponent { // eslint-disable-li
                 </StepAnimationContainer>
 
     			<ButtonContainer>
-                    <Button href={href}>
-                        {children}
-                    </Button>
+
                 </ButtonContainer>
     			
 
@@ -57,3 +55,7 @@ export default class HomePage extends React.PureComponent { // eslint-disable-li
     );
   }
 }
+
+                    // <Button href={href}>
+                    //     {children}
+                    // </Button>
