@@ -11,10 +11,10 @@ const translate = keyframes `
 
 const Animation = styled.div`
   background-image: url(${props => props.src});
-  background-size: 6400px 240px;
+  background-size: 6400px 268px;
   background-repeat: none;
   width: 6400px;
-  height: 240px;
+  height: 268px;
   background-position: 0, 0;
   animation:${translate} 1.1s infinite steps(20);
 `;
