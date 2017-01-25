@@ -63,23 +63,27 @@ export default class HomePage extends React.PureComponent { // eslint-disable-li
     		/>
     		<div>
 
-                <LogoContainer onMouseOver={this.outAnimation}>
-    			    <Logo />
-                </LogoContainer>
+            <LogoContainer onMouseOver={this.outAnimation}>
+			    <Logo />
+            </LogoContainer>
 
-                <StepAnimationContainer onMouseOver={this.outAnimation}>
-                    <StepAnimation hover={this.state.hover}/>
-                </StepAnimationContainer>
+            <StepAnimationContainer onMouseOver={this.outAnimation}>
+                <StepAnimation hover={this.state.hover}/>
+            </StepAnimationContainer>
 
-    			<ButtonContainer onMouseOut={this.outAnimation}>
-                    <Button href={href} onMouseOver={this.hoverAnimation} onMouseOver={this.hoverAnimation} hover={this.state.hover}>
-                        {children}
-                    </Button>
-                </ButtonContainer>
-    			
+      			<ButtonContainer onMouseOut={this.outAnimation}>
+                <Button href={href} onMouseOver={this.hoverAnimation} onMouseOver={this.hoverAnimation} hover={this.state.hover}>
+                    {children}
+                </Button>
+            </ButtonContainer>
+		
 
     		</div>
     	</article>
     );
   }
 }
+
+                    // <Button href={href}>
+                    //     {children}
+                    // </Button>

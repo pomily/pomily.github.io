@@ -59,4 +59,3 @@ AnimationContainer.propTypes = {
 };
 
 export default StepAnimation;
-
