@@ -18,7 +18,7 @@ const AnimationContainer = styled.div`
       height: 256px;
       width: 320px;
   }
-  @media(max-height: 550px){
+  @media(max-height: 650px){
       height: 200px;
       width: 250px;
   }

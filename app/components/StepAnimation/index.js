@@ -31,7 +31,7 @@ function StepAnimation(props) {
   }
 
   /* Slide visibility*/
-  var mainVisible = "block";
+  var mainVisible = "none";
   var hoverVisible = "none";
   var transitionVisible = "none";
   var loadingVisible = "none";
@@ -65,6 +65,10 @@ function StepAnimation(props) {
         transitionVisible = "none";
         break;
       default:
+        loadingVisible = "block";
+        mainVisible = "none";
+        hoverVisible = "none";
+        transitionVisible = "none";
         window.location = "http://arkdesignstudio.github.io/old-site";
   }
 
@@ -77,10 +81,10 @@ function StepAnimation(props) {
 
   return (
     <AnimationContainer height={containerHeight * 1.09375} width={containerWidth}>
+      <Animation src={StripLoading} visible={loadingVisible} scale='1' translation='0'/>
       <Animation src={Strip} visible={mainVisible} scale='1' translation='0'/>
       <Animation src={StripHover} visible={hoverVisible} scale={hoverScale} translation={hoverTranslation}/>
       <Animation src={StripTransition} visible={transitionVisible} scale='1' translation='0'/>
-      <Animation src={StripLoading} visible={loadingVisible} scale='1' translation='0'/>
     </AnimationContainer>
 
   );

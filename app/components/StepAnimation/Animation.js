@@ -68,7 +68,7 @@ const Animation= styled.div`
       width: 6400px;
       animation:${translateSmall} 1.6s infinite steps(20);
   }
-  @media(max-height: 550px){
+  @media(max-height: 650px){
       background-size: 5000px 200px;
       height: 200px;
       width: 5000px;

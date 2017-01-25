@@ -50,21 +50,20 @@ export default class HomePage extends React.PureComponent { // eslint-disable-li
   incrementSlide(){
     
   }
-  jumpToPortfolio(){
-      window.location = "http://arkdesignstudio.github.io/old-site";
-  }
   transition(){
 
-    this.setState({transitionSlide: this.state.transitionSlide + 1});
+    setTimeout(function() {
+      this.setState({transitionSlide: this.state.transitionSlide + 1});
+    }.bind(this), 200);
     this.setState({backgroundOpacity: 0});
 
     setTimeout(function() {
       this.setState({transitionSlide: this.state.transitionSlide + 1});
-    }.bind(this), 1600);
+    }.bind(this), 1800);
 
     setTimeout(function() {
       this.setState({transitionSlide: this.state.transitionSlide + 1})
-    }.bind(this), 3000);
+    }.bind(this), 3600);
 
     this.setState({hover: false});
   }
