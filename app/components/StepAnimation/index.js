@@ -10,6 +10,8 @@ import AnimationContainer from './AnimationContainer';
 import Animation from './Animation';
 import Strip from './ark_slideshow_home_big.png';
 import StripHover from './ark_slideshow_home_hover.png';
+import StripTransition from './ark_slideshow_transition.png';
+import StripLoading from './ark_slideshow_loading.png';
 
 
 function StepAnimation(props) {
@@ -28,9 +30,13 @@ function StepAnimation(props) {
     isSmall = true;
   }
 
-  /* Switch out animation type based on hover*/
+  /* Slide visibility*/
   var mainVisible = "block";
   var hoverVisible = "none";
+  var transitionVisible = "none";
+  var loadingVisible = "none";
+
+
   var scale = 1;
   var translation = 0;
 
@@ -40,15 +46,41 @@ function StepAnimation(props) {
     scale = 1.09375;
   }
 
+  switch (props.slide){
+      case 1:
+        if(!props.hover){
+          mainVisible = "block";
+        }
+        break;
+      case 2:
+        transitionVisible = "block";
+        mainVisible = "none";
+        hoverVisible = "none";
+        loadingVisible = "none";
+        break;
+      case 3:
+        loadingVisible = "block";
+        mainVisible = "none";
+        hoverVisible = "none";
+        transitionVisible = "none";
+        break;
+      default:
+        window.location = "http://arkdesignstudio.github.io/old-site";
+  }
+
   /* Transformation constant for the hover animation*/
   const hoverScale = 1.09375;
   const hoverTranslation = -3.8;
+
+
 
 
   return (
     <AnimationContainer height={containerHeight * 1.09375} width={containerWidth}>
       <Animation src={Strip} visible={mainVisible} scale='1' translation='0'/>
       <Animation src={StripHover} visible={hoverVisible} scale={hoverScale} translation={hoverTranslation}/>
+      <Animation src={StripTransition} visible={transitionVisible} scale='1' translation='0'/>
+      <Animation src={StripLoading} visible={loadingVisible} scale='1' translation='0'/>
     </AnimationContainer>
 
   );
