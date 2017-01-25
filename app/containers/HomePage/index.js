@@ -22,14 +22,20 @@ import LogoContainer from './LogoContainer';
 import StepAnimation from 'components/StepAnimation';
 import StepAnimationContainer from './StepAnimationContainer';
 
+import Background from './Background';
+import BackgroundUnder from './BackgroundUnder';
+
 export default class HomePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   constructor(props) {
     super(props);
     this.state = {
         hover: false,
+        transitionSlide : 1,
+        backgroundOpacity: 1, 
     };
     this.hoverAnimation = this.hoverAnimation.bind(this);
     this.outAnimation = this.outAnimation.bind(this);
+    this.transition = this.transition.bind(this);
   }
   componentDidMount() {
     window.addEventListener('resize', () => this.forceUpdate())//triggers a state change whenever the display size is altered
@@ -41,6 +47,27 @@ export default class HomePage extends React.PureComponent { // eslint-disable-li
     // alert("bye");
     this.setState({hover: false});
   }
+  incrementSlide(){
+    
+  }
+  jumpToPortfolio(){
+      window.location = "http://arkdesignstudio.github.io/old-site";
+  }
+  transition(){
+
+    this.setState({transitionSlide: this.state.transitionSlide + 1});
+    this.setState({backgroundOpacity: 0});
+
+    setTimeout(function() {
+      this.setState({transitionSlide: this.state.transitionSlide + 1});
+    }.bind(this), 1600);
+
+    setTimeout(function() {
+      this.setState({transitionSlide: this.state.transitionSlide + 1})
+    }.bind(this), 3000);
+
+    this.setState({hover: false});
+  }
   render() {
 
   	const href = '#';
@@ -49,10 +76,6 @@ export default class HomePage extends React.PureComponent { // eslint-disable-li
     var hoverAnimation = (function (){
         hover = true;
     });
-    var outAnimation = (function (){
-        alert("bye");
-    });
-
     return (
     	<article>
     		<Helmet
@@ -62,20 +85,22 @@ export default class HomePage extends React.PureComponent { // eslint-disable-li
     			]}
     		/>
     		<div>
-
+          <Background opacity={this.state.backgroundOpacity}>
             <LogoContainer onMouseOver={this.outAnimation}>
-			    <Logo />
+			         <Logo />
             </LogoContainer>
 
             <StepAnimationContainer onMouseOver={this.outAnimation}>
-                <StepAnimation hover={this.state.hover}/>
+                <StepAnimation hover={this.state.hover} slide={this.state.transitionSlide}/>
             </StepAnimationContainer>
 
       			<ButtonContainer onMouseOut={this.outAnimation}>
-                <Button href={href} onMouseOver={this.hoverAnimation} onMouseOver={this.hoverAnimation} hover={this.state.hover}>
+                <Button href={href} onClick={this.transition} onMouseOver={this.hoverAnimation} hover={this.state.hover}>
                     {children}
                 </Button>
             </ButtonContainer>
+          </Background>
+          <BackgroundUnder></BackgroundUnder>
 		
 
     		</div>
