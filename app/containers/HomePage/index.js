@@ -1,3 +1,4 @@
+
 /*
  * HomePage
  *
@@ -22,10 +23,35 @@ import StepAnimation from 'components/StepAnimation';
 import StepAnimationContainer from './StepAnimationContainer';
 
 export default class HomePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
+  constructor(props) {
+    super(props);
+    this.state = {
+        hover: false,
+    };
+    this.hoverAnimation = this.hoverAnimation.bind(this);
+    this.outAnimation = this.outAnimation.bind(this);
+  }
+  componentDidMount() {
+    window.addEventListener('resize', () => this.forceUpdate())//triggers a state change whenever the display size is altered
+  }
+  hoverAnimation(){
+    this.setState({hover: true});
+  }
+  outAnimation(){
+    // alert("bye");
+    this.setState({hover: false});
+  }
   render() {
 
   	const href = '#';
   	const children = (<h3>E X P L O R E</h3>);
+    var hover = false;
+    var hoverAnimation = (function (){
+        hover = true;
+    });
+    var outAnimation = (function (){
+        alert("bye");
+    });
 
     return (
     	<article>
@@ -37,16 +63,16 @@ export default class HomePage extends React.PureComponent { // eslint-disable-li
     		/>
     		<div>
 
-                <LogoContainer>
+                <LogoContainer onMouseOver={this.outAnimation}>
     			    <Logo />
                 </LogoContainer>
 
-                <StepAnimationContainer>
-                    <StepAnimation />
+                <StepAnimationContainer onMouseOver={this.outAnimation}>
+                    <StepAnimation hover={this.state.hover}/>
                 </StepAnimationContainer>
 
-    			<ButtonContainer>
-                    <Button href={href}>
+    			<ButtonContainer onMouseOut={this.outAnimation}>
+                    <Button href={href} onMouseOver={this.hoverAnimation} onMouseOver={this.hoverAnimation} hover={this.state.hover}>
                         {children}
                     </Button>
                 </ButtonContainer>

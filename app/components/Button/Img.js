@@ -3,13 +3,12 @@ import styled from 'styled-components';
 import NormalImg from 'components/Img';
 
 const Img = styled(NormalImg)`
-  height: 13vh;
+  z-index: 10;
+  height: 30px;
+  width: 30px;
   margin: 0 auto;
-  display: block;
-  padding-top: 10px;
-  min-height: 70px;
-  max-height: 100px;
-  z-index: 100;
+  transition: .3s;
+
 `;
 
 export default Img;
