@@ -60,7 +60,7 @@ const Animation= styled.div`
       background-size: 9000px 360px;
       height: 360px;
       width: 9000px;
-      animation:${translateGiant} 1.6s infinite steps(20);
+      animation:${translateGiant} 6.6s infinite steps(20);
   }
   @media(max-height: 800px){
       background-size: 6400px 256px;

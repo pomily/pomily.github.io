@@ -8,7 +8,7 @@ import React, { PropTypes, Children } from 'react';
 
 import AnimationContainer from './AnimationContainer';
 import Animation from './Animation';
-import Strip from './ark_slideshow_home_big.png';
+import Strip from './ark_slideshow_transition.png';
 import StripHover from './ark_slideshow_home_hover.png';
 
 
