@@ -10,6 +10,8 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   margin-top: 10px;
+  opacity: ${(props) => props.opacity};
+  transition: 1s;
   `;
 
 export default Wrapper;

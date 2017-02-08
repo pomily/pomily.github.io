@@ -44,8 +44,14 @@ function Button(props) {
       iconSrc = ExploreButtonLit;
   }
 
+  var visible = "1";
+
+  if (!props.visible){
+    visible = "0";
+  }
+
   return (
-      <Wrapper>
+      <Wrapper opacity={visible}>
           <IconWrapper translation={iconTranslation}>
             <Img src={iconSrc} alt="Button Icon"/>
           </IconWrapper>

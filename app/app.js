@@ -21,6 +21,9 @@ import { syncHistoryWithStore } from 'react-router-redux';
 import { useScroll } from 'react-router-scroll';
 import LanguageProvider from 'containers/LanguageProvider';
 import configureStore from './store';
+import ReactGA from 'react-ga';
+
+ReactGA.initialize('UA-91623201-1'); //Unique Google Analytics tracking number
 
 // Import i18n messages
 import { translationMessages } from './i18n';
@@ -51,12 +54,17 @@ const rootRoute = {
   childRoutes: createRoutes(store),
 };
 
+function fireTracking() {
+    //alert("update!");
+    ReactGA.pageview(window.location.hash);
+}
 
 const render = (translatedMessages) => {
   ReactDOM.render(
     <Provider store={store}>
       <LanguageProvider messages={translatedMessages}>
         <Router
+          onUpdate={fireTracking}
           history={history}
           routes={rootRoute}
           render={

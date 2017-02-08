@@ -24,6 +24,14 @@ import StepAnimationContainer from './StepAnimationContainer';
 
 import Background from './Background';
 import BackgroundUnder from './BackgroundUnder';
+import ReactGA from 'react-ga';
+
+ReactGA.initialize('UA-91623201-1'); //Unique Google Analytics tracking number
+
+function fireTracking() {
+    alert("click!");
+    ReactGA.pageview(window.location.hash);
+}
 
 export default class HomePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   constructor(props) {
@@ -32,6 +40,7 @@ export default class HomePage extends React.PureComponent { // eslint-disable-li
         hover: false,
         transitionSlide : 1,
         backgroundOpacity: 1, 
+        labelOpacity: 1,
     };
     this.hoverAnimation = this.hoverAnimation.bind(this);
     this.outAnimation = this.outAnimation.bind(this);
@@ -52,9 +61,15 @@ export default class HomePage extends React.PureComponent { // eslint-disable-li
   }
   transition(){
 
+    alert("click!");
+    ReactGA.pageview(window.location.hash);
+
+    this.setState({labelOpacity: 0});
+
     setTimeout(function() {
       this.setState({transitionSlide: this.state.transitionSlide + 1});
     }.bind(this), 200);
+
     this.setState({backgroundOpacity: 0});
 
     setTimeout(function() {
@@ -86,7 +101,7 @@ export default class HomePage extends React.PureComponent { // eslint-disable-li
     		<div>
           <Background opacity={this.state.backgroundOpacity}>
             <LogoContainer onMouseOver={this.outAnimation}>
-			         <Logo />
+			         <Logo visible={this.state.labelOpacity} />
             </LogoContainer>
 
             <StepAnimationContainer onMouseOver={this.outAnimation}>
@@ -94,7 +109,7 @@ export default class HomePage extends React.PureComponent { // eslint-disable-li
             </StepAnimationContainer>
 
       			<ButtonContainer onMouseOut={this.outAnimation}>
-                <Button href={href} onClick={this.transition} onMouseOver={this.hoverAnimation} hover={this.state.hover}>
+                <Button visible={this.state.labelOpacity} href={href} onClick={this.transition} onMouseOver={this.hoverAnimation} hover={this.state.hover}>
                     {children}
                 </Button>
             </ButtonContainer>

@@ -10,6 +10,8 @@ const Img = styled(NormalImg)`
   min-height: 70px;
   max-height: 100px;
   z-index: 100;
+  transition: 1s;
+  opacity : ${(props) => props.opacity};
 `;
 
 export default Img;
