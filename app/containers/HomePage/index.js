@@ -60,8 +60,6 @@ export default class HomePage extends React.PureComponent { // eslint-disable-li
     
   }
   transition(){
-
-    alert("click!");
     ReactGA.pageview(window.location.hash);
 
     this.setState({labelOpacity: 0});
