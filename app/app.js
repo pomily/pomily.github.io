@@ -56,7 +56,7 @@ const rootRoute = {
 
 function fireTracking() {
     //alert("update!");
-    ReactGA.pageview(window.location.hash);
+    ReactGA.pageview(window.location.pathname);
 }
 
 const render = (translatedMessages) => {
