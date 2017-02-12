@@ -16,20 +16,19 @@ const buttonStyles = css`
   display: inline-block;
   box-sizing: border-box;
   text-decoration: none;
-  border-radius: 20px;
   -webkit-font-smoothing: antialiased;
   -webkit-touch-callout: none;
   user-select: none;
   cursor: pointer;
   outline: 0;
+  letter-spacing: 3px;
   font-family: 'CircularBlack','Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: bold;
-  color: #5E5E60;
+  color: #E5B5D1;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center
-  margin: 0 auto;
   transition: .3s;
   @media(max-height: 800px){
       font-size: 12px;

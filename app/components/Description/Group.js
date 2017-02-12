@@ -2,11 +2,9 @@ import styled from 'styled-components';
 
 
 const Group = styled.div`
+	margin-top: -30vh;
 	max-height: 30vh;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-
+	margin-left: 20vw;
 `;
 
 export default Group;

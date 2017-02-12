@@ -4,7 +4,10 @@
 	 viewBox="0 0 160 50" style="enable-background:new 0 0 160 50;" xml:space="preserve">
 <style type="text/css">
 	.st0{fill:#E5B5D1;}
-	.st1{fill:none;stroke:#E5B5D1;stroke-width:2.7729;stroke-miterlimit:10;}
+	.st1{fill:#FFFBF9;}
+	.st2{fill:#E8E3F1;}
+	.st3{fill:#FCDEDE;}
+	.st4{fill:none;stroke:#E5B5D1;stroke-width:2.7729;stroke-miterlimit:10;}
 </style>
 <g>
 	<path class="st0" d="M58.4,27.3v5.2h-3.2V18h5.5c2.9,0,5,1.9,5,4.6c0,2.7-2,4.6-5,4.6H58.4z M60.3,24.5c1.2,0,2.1-0.7,2.1-1.8
@@ -17,6 +20,9 @@
 	<path class="st0" d="M144.3,18h3.8l3,5.4l3-5.4h3.6l-5.1,8.5v6.1h-3.2v-6.1L144.3,18z"/>
 </g>
 <g>
+	<polygon class="st1" points="6.7,17.9 33.5,33.6 33.5,17.9 18.7,9.4 5.8,17.1 	"/>
+	<polygon class="st2" points="19.2,43.4 19.2,26.2 33.3,34.2 	"/>
+	<polygon class="st3" points="4.9,19.5 4.9,35 19.2,43.4 19.2,26.2 4.9,17.9 	"/>
 	<g>
 		<g>
 			<g>
@@ -25,12 +31,12 @@
 		</g>
 		<g>
 			<g>
-				<path class="st1" d="M33.5,17.9"/>
+				<path class="st4" d="M33.5,17.9"/>
 			</g>
 		</g>
 		<g>
 			<g>
-				<path class="st1" d="M19.2,26.2"/>
+				<path class="st4" d="M19.2,26.2"/>
 			</g>
 		</g>
 		<g>

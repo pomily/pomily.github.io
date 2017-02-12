@@ -3,13 +3,12 @@ import styled from 'styled-components';
 import NormalImg from 'components/Img';
 
 const Img = styled(NormalImg)`
-  height: 42px;
-  left: 10px;
+  height: 150px;
   display: block;
+  padding-top: 10px;
   z-index: 100;
   transition: 1s;
   opacity : ${(props) => props.opacity};
-  justify-content: center;
 `;
 
 export default Img;

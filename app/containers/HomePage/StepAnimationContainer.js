@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 
 const StepAnimationContainer = styled.div`
-  width: 100vw; 
+  width: 100vw;
   height: 40vh;
   display: flex;
   align-items: center;

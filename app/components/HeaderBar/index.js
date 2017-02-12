@@ -22,7 +22,6 @@ function HeaderBar(props) {
 				<A href="#">
 					<Img opacity={visible} src={HeaderLogo} alt="Pomily - Logo" />
 				</A>
-				<SearchBar><Input width="100%"></Input></SearchBar>
 			</Group>
 	);
 }

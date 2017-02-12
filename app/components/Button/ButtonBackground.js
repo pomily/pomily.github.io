@@ -14,14 +14,12 @@ const ButtonBackground = styled.div`
   border: 3px solid #5E5E60;
   @media(max-height: 800px){
       font-size: 12px;
-      // border: 3px solid #5E5E60;
       height: 35px;
       width: 160px;
       margin-top: 30px;
   }
   @media(min-height: 800px){
       font-size: 14px;
-      // border: 4px solid #5E5E60;
       height: 40px;
       width: 220px;
       margin-top: 25px;

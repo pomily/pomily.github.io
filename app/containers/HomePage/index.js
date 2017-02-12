@@ -17,10 +17,12 @@ import { FormattedMessage } from 'react-intl';
 import messages from './messages';
 import Button from 'components/Button';
 import ButtonContainer from './ButtonContainer';
-import Logo from 'components/Logo';
-import LogoContainer from './LogoContainer';
+import Description from 'components/Description';
+import DescriptionContainer from './DescriptionContainer';
 import StepAnimation from 'components/StepAnimation';
 import StepAnimationContainer from './StepAnimationContainer';
+import Artwork from 'components/Artwork';
+import ArtworkContainer from './ArtworkContainer';
 
 import HeaderBar from 'components/HeaderBar';
 import HeaderContainer from './HeaderContainer';
@@ -42,7 +44,7 @@ export default class HomePage extends React.PureComponent { // eslint-disable-li
     this.state = {
         hover: false,
         transitionSlide : 1,
-        backgroundOpacity: 1, 
+        backgroundOpacity: 1,
         labelOpacity: 1,
     };
     this.hoverAnimation = this.hoverAnimation.bind(this);
@@ -50,17 +52,16 @@ export default class HomePage extends React.PureComponent { // eslint-disable-li
     this.transition = this.transition.bind(this);
   }
   componentDidMount() {
-    window.addEventListener('resize', () => this.forceUpdate())//triggers a state change whenever the display size is altered
+
   }
   hoverAnimation(){
     this.setState({hover: true});
   }
   outAnimation(){
     // alert("bye");
-    this.setState({hover: false});
   }
   incrementSlide(){
-    
+
   }
   transition(){
     ReactGA.pageview(window.location.hash);
@@ -106,21 +107,17 @@ export default class HomePage extends React.PureComponent { // eslint-disable-li
                <HeaderBar/>
             </HeaderContainer>
 
-            <LogoContainer onMouseOver={this.outAnimation}>
-			         <Logo visible={this.state.labelOpacity} />
-            </LogoContainer>
+            <DescriptionContainer onMouseOver={this.outAnimation}>
+			         <Description visible={this.state.labelOpacity} />
+            </DescriptionContainer>
 
-            <StepAnimationContainer onMouseOver={this.outAnimation}>
-                <StepAnimation hover={this.state.hover} slide={this.state.transitionSlide}/>
-            </StepAnimationContainer>
+            <ArtworkContainer>
+              <Artwork/>
+            </ArtworkContainer>
 
-      			<ButtonContainer onMouseOut={this.outAnimation}>
-                <Button visible={this.state.labelOpacity} href={href} onClick={this.transition} onMouseOver={this.hoverAnimation} hover={this.state.hover}>
-                    {children}
-                </Button>
-            </ButtonContainer>
+
           </Background>
-		
+
 
     		</div>
     	</article>

@@ -9,6 +9,7 @@ const HeaderContainer = styled.div`
   position: relative;
   display: flex;
   align-items: center;
+  justify-content: center;
 `;
 
 export default HeaderContainer;

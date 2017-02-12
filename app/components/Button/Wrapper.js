@@ -8,7 +8,7 @@ const Wrapper = styled.div`
   align-self: flex-start;
   display: flex;
   align-items: center;
-  justify-content: center;
+  margin-left: 25px;
   margin-top: 10px;
   opacity: ${(props) => props.opacity};
   transition: 1s;

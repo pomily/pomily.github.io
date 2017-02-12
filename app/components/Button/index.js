@@ -51,10 +51,7 @@ function Button(props) {
   }
 
   return (
-      <Wrapper opacity={visible}>
-          <IconWrapper translation={iconTranslation}>
-            <Img src={iconSrc} alt="Button Icon"/>
-          </IconWrapper>
+      <Wrapper>
           <ButtonIcon>
              <A href={props.href} onClick={props.onClick} onMouseOver={props.onMouseOver} id="a">
                 {Children.toArray(props.children)}
