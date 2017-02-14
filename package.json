@@ -1,10 +1,10 @@
 {
-  "name": "ark_site",
+  "name": "pomily_splash",
   "version": "1.0.0",
-  "description": "a cool site for cool cats.",
+  "description": "",
   "repository": {
     "type": "git",
-    "url": "git@github.com:kevinwu127/ark_site.git"
+    "url": "git@github.com:arkdesignstudio/pomily-splash.git"
   },
   "engines": {
     "npm": ">=3"
