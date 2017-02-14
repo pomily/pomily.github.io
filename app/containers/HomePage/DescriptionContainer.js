@@ -11,12 +11,13 @@ const DescriptionContainer = styled.div`
     margin-top: 20vh;
   }
   @media(max-width: 700px){
-    margin-top: 28vh;
-    margin-left: 10vw;
+    margin-top: 32vh;
+    margin-left: 0vw;
 
     @media(max-height: 600px){
-        margin-top: 22vh;
+        margin-top: 32vh;
     }
+    transform: scale(.8,.8);
   }
   z-index: 100;
   position: relative;

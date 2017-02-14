@@ -94,7 +94,7 @@ export default class HomePage extends React.PureComponent { // eslint-disable-li
     return browser;
   }
   changeSlide(){
-    if (this.checkBrowser() == "Firefox"){
+    if (this.checkBrowser() == "Firefox" || document.documentElement.clientWidth < 530){
       if (this.state.topVisiblity == 1){
         this.setState({topVisiblity:0});
       }

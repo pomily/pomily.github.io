@@ -9,7 +9,9 @@ const ButtonContainer = styled.div`
   justify-content: left;
   margin-left: 15vw;
   @media(max-width: 700px){
-    margin-left: 10vw;
+    padding-top: 40px;
+    margin-left: 0vw;
+    transform: scale(.8,.8);
   }
   z-index: 100;
 `;
