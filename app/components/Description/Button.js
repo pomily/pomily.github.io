@@ -6,7 +6,7 @@ const Button = styled(NormalButton)`
   height: 13vh;
   margin: 0 auto;
   display: block;
-  padding-top: 10px;
+  margin-left: -20px;
   min-height: 70px;
   max-height: 100px;
   z-index: 100;

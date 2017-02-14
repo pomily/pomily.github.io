@@ -9,13 +9,11 @@
 import React, { PropTypes, Children } from 'react';
 
 import A from './A';
-import StyledButton from './StyledButton';
 import Wrapper from './Wrapper';
-import IconWrapper from './IconWrapper';
-import ButtonBackground from './ButtonBackground';
-import ButtonIcon from './ButtonIcon';
-import ExploreButton from './ExploreButton.png';
-import ExploreButtonLit from './ExploreButtonLit.png';
+
+import ButtonInner from './ButtonInner';
+import ButtonOuter from './ButtonOuter';
+
 import Img from './Img';
 
 
@@ -30,19 +28,13 @@ function Button(props) {
   // If the Button has a handleRoute prop, we want to render a button
   if (props.handleRoute) {
     button = (
-      <StyledButton  onClick={props.handleRoute} src={ExploreButton} id="b">
+      <StyledButton buttonColor={props.color} onClick={props.handleRoute} id="b">
         {Children.toArray(props.children)}
       </StyledButton>
     );
   }
 
   // Check for mouseover
-  var iconTranslation = 5;
-  var iconSrc = ExploreButton;
-  if (props.hover){
-      iconTranslation = -5;
-      iconSrc = ExploreButtonLit;
-  }
 
   var visible = "1";
 
@@ -52,11 +44,13 @@ function Button(props) {
 
   return (
       <Wrapper>
-          <ButtonIcon>
+          <ButtonOuter buttonColor={props.borderColor} backgroundColor={props.backgroundColor} hilightColor={props.hilightColor}>
              <A href={props.href} onClick={props.onClick} onMouseOver={props.onMouseOver} id="a">
-                {Children.toArray(props.children)}
+               <ButtonInner buttonColor={props.textColor} onClick={props.handleRoute} id="b">
+                 {Children.toArray(props.children)}
+               </ButtonInner>
              </A>
-          </ButtonIcon>
+          </ButtonOuter>
 
       </Wrapper>
   );

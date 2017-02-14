@@ -13,17 +13,20 @@ injectGlobal`
 
 
 const Title = styled.div`
-  padding-left: 20px;
+  padding-left: 10px;
   padding-top: 10px;
   display: inline-block;
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -webkit-touch-callout: none;
   outline: 0;
-  font-size: 28pt;
+  font-size: 24pt;
   font-family: 'CircularMedium','Helvetica Neue', Helvetica, Arial, sans-serif;
-  color: #E5B5D1;
+  color: ${(props) => props.color};
   transition: .3s;
+  @media(max-width: 700px){
+    font-size: 20pt;
+  }
 
 `;
 

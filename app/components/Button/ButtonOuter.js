@@ -1,8 +1,7 @@
 import styled from 'styled-components';
-import ExploreButton from './ExploreButton.png';
-import ExploreButtonLit from './ExploreButtonLit.png';
 
-const ButtonIcon = styled.div`
+
+const ButtonOuter = styled.div`
   position: relative;
   z-index = 1;
   width: 100%;
@@ -12,7 +11,8 @@ const ButtonIcon = styled.div`
   align-items: center;
   justify-content: center;
   transition: .3s;
-  border: 3px solid #E5B5D1;
+  border: 3px solid ${(props) => props.buttonColor};
+  background: ${(props) => props.backgroundColor};
   @media(max-height: 800px){
       font-size: 12px;
       height: 35px;
@@ -20,24 +20,20 @@ const ButtonIcon = styled.div`
       margin-top: 25px;
   }
   @media(min-height: 800px){
-      font-size: 14px;
-      height: 40px;
-      width: 220px;
-      margin-top: 30px;
+      font-size: 12px;
+      height: 35px;
+      width: 160px;
+      margin-top: 25px;
   }
   display: inline-block;
   box-sizing: border-box;
   text-decoration: none;
-  -webkit-font-smoothing: antialiased;
-  -webkit-touch-callout: none;
-  user-select: none;
-  cursor: pointer;
   outline: 0;
   &:hover {
-    background: #E5B5D1;
-    border: 3px solid #E5B5D1;
+    border: 3px solid ${(props) => props.hilightColor};
+    background: ${(props) => props.hilightColor};
   }
 
   `;
 
-export default ButtonIcon;
+export default ButtonOuter;

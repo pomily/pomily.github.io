@@ -15,19 +15,29 @@ import Helmet from 'react-helmet';
 
 import { FormattedMessage } from 'react-intl';
 import messages from './messages';
+
 import Button from 'components/Button';
 import ButtonContainer from './ButtonContainer';
+
 import Description from 'components/Description';
 import DescriptionContainer from './DescriptionContainer';
-import StepAnimation from 'components/StepAnimation';
-import StepAnimationContainer from './StepAnimationContainer';
+
 import Artwork from 'components/Artwork';
 import ArtworkContainer from './ArtworkContainer';
 
+import Shape from 'components/Shape';
+import ShapeContainer from './ShapeContainer';
+
+import BottomLayer from './BottomLayer';
+import TopLayer from './TopLayer';
+
+import LayerMask from './splash-vector.svg';
+import MobileMask from './splash-vector-mobile.svg';
+
 import HeaderBar from 'components/HeaderBar';
 import HeaderContainer from './HeaderContainer';
-import SearchBar from 'components/SearchBar';
 
+import SearchBar from 'components/SearchBar';
 import Background from './Background';
 import ReactGA from 'react-ga';
 
@@ -43,77 +53,194 @@ export default class HomePage extends React.PureComponent { // eslint-disable-li
     super(props);
     this.state = {
         hover: false,
-        transitionSlide : 1,
         backgroundOpacity: 1,
         labelOpacity: 1,
+        slide: 0,
+        topVisiblity: 1,
+        width: 0,
     };
+    this.updateDimensions =  this.updateDimensions.bind(this);
     this.hoverAnimation = this.hoverAnimation.bind(this);
     this.outAnimation = this.outAnimation.bind(this);
-    this.transition = this.transition.bind(this);
+    this.changeSlide = this.changeSlide.bind(this);
+  }
+  updateDimensions() {
+    this.setState({width: $(window).width()});
   }
   componentDidMount() {
-
+      window.addEventListener('resize', () => this.forceUpdate())//triggers a state change whenever the display size is altered
   }
   hoverAnimation(){
     this.setState({hover: true});
   }
   outAnimation(){
-    // alert("bye");
+    //alert("bye");
   }
-  incrementSlide(){
-
+  checkBrowser(){
+    var c = navigator.userAgent.search("Chrome");
+    var f = navigator.userAgent.search("Firefox");
+    var m8 = navigator.userAgent.search("MSIE 8.0");
+    var m9 = navigator.userAgent.search("MSIE 9.0");
+    var browser = "Chrome";
+    if (c > -1) {
+        browser = "Chrome";
+    } else if (f > -1) {
+        browser = "Firefox";
+    } else if (m9 > -1) {
+        browser ="MSIE 9.0";
+    } else if (m8 > -1) {
+        browser ="MSIE 8.0";
+    }
+    return browser;
   }
-  transition(){
-    ReactGA.pageview(window.location.hash);
-
-    this.setState({labelOpacity: 0});
-
-    setTimeout(function() {
-      this.setState({transitionSlide: this.state.transitionSlide + 1});
-    }.bind(this), 200);
-
-    this.setState({backgroundOpacity: 0});
-
-    setTimeout(function() {
-      this.setState({transitionSlide: this.state.transitionSlide + 1});
-    }.bind(this), 1800);
-
-    setTimeout(function() {
-      this.setState({transitionSlide: this.state.transitionSlide + 1})
-    }.bind(this), 3600);
-
-    this.setState({hover: false});
+  changeSlide(){
+    if (this.checkBrowser() == "Firefox"){
+      if (this.state.topVisiblity == 1){
+        this.setState({topVisiblity:0});
+      }
+      else {
+        this.setState({topVisiblity:1});
+      }
+    }
+    else{
+      if (this.state.slide == 0){
+        this.setState({slide:1});
+      }
+      else {
+        this.setState({slide:0});
+      }
+    }
+  }
+  scrollAnimation(event){
+    alert("bye");
   }
   render() {
 
   	const href = '#';
   	const children = (<h3>E X P L O R E</h3>);
-    var hover = false;
-    var hoverAnimation = (function (){
-        hover = true;
-    });
+    var maskPosition =  90;
+    var maskImage;
+
+    if (document.documentElement.clientWidth > 1400){
+      maskImage = LayerMask;
+      if (this.state.slide ==  0)
+        maskPosition = "30%";
+      else
+        maskPosition = "80%";
+    }
+    else if (document.documentElement.clientWidth > 900){
+      maskImage = LayerMask;
+      if (this.state.slide ==  0)
+        maskPosition = "25%";
+      else
+        maskPosition = "80%";
+    }
+    else if (document.documentElement.clientWidth > 730){
+      maskImage = LayerMask;
+      if (this.state.slide ==  0)
+        maskPosition = "10%";
+      else
+        maskPosition = "80%";
+    }
+    else if (document.documentElement.clientWidth > 530){
+      maskImage = MobileMask;
+      if (document.documentElement.clientHeight > 900){
+        if (this.state.slide ==  0)
+          maskPosition = "20%";
+        else
+          maskPosition = "100%";
+      }
+      else{
+        if (this.state.slide ==  0)
+          maskPosition = "30%";
+        else
+          maskPosition = "100%";
+      }
+    }
+    else{
+      maskImage = MobileMask;
+      if (document.documentElement.clientHeight > 900){
+          if (this.state.slide ==  0)
+            maskPosition = "-10%";
+          else
+            maskPosition = "200%";
+      }
+      else if (document.documentElement.clientHeight > 800){
+          if (this.state.slide ==  0)
+            maskPosition = "0%";
+          else
+            maskPosition = "130%";
+      }
+      else if (document.documentElement.clientHeight > 700){
+          if (this.state.slide ==  0)
+            maskPosition = "10%";
+          else
+            maskPosition = "110%";
+      }
+      else{
+        if (this.state.slide ==  0)
+          maskPosition = "-5%";
+        else
+          maskPosition = "100%";
+      }
+    }
+    window.onscroll = function() {alert("hi")};
+
     return (
     	<article>
     		<Helmet
-    			title="ARK Studio"
+    			title="Pomily"
     			meta={[
-    				{ name: 'description', content: 'we build cool stuff.' }
+    				{ name: 'description', content: 'Cosmetics Ecommerce' }
     			]}
     		/>
     		<div>
           <Background opacity={this.state.backgroundOpacity}>
 
-            <HeaderContainer>
-               <HeaderBar/>
-            </HeaderContainer>
+            <TopLayer opacity={this.state.topVisiblity} mask={maskImage} maskPosition={maskPosition} onScroll={this.scrollAnimation}>
 
-            <DescriptionContainer onMouseOver={this.outAnimation}>
-			         <Description visible={this.state.labelOpacity} />
-            </DescriptionContainer>
+                  <HeaderContainer>
+                     <HeaderBar/>
+                  </HeaderContainer>
 
-            <ArtworkContainer>
-              <Artwork/>
-            </ArtworkContainer>
+                  <DescriptionContainer onMouseOver={this.outAnimation}>
+                     <Description slide="first" />
+                  </DescriptionContainer>
+
+                  <ButtonContainer onMouseOver={this.outAnimation}>
+                    <Button onClick={this.changeSlide} textColor="#FFFFFF" borderColor="#E5B5D1" hilightColor="#C78BB6" backgroundColor="#E5B5D1">MORE</Button>
+                    <Button textColor="#E5B5D1" borderColor="#E5B5D1" hilightColor="#F7E7F2" backgroundColor="#fffbf9">SIGN UP</Button>
+                  </ButtonContainer>
+
+                  <ArtworkContainer>
+                    <Artwork slide="first"/>
+                  </ArtworkContainer>
+
+
+            </TopLayer>
+
+            <BottomLayer  >
+
+                    <HeaderContainer>
+                       <HeaderBar/>
+                    </HeaderContainer>
+
+                    <DescriptionContainer onMouseOver={this.outAnimation}>
+        			         <Description slide="second"/>
+                    </DescriptionContainer>
+
+                    <ButtonContainer onMouseOver={this.outAnimation}>
+                      <Button onClick={this.changeSlide} textColor="#FFFFFF" borderColor="#FFFFFF" hilightColor="#E296C7" backgroundColor="#E7BBD5">BACK</Button>
+                      <Button textColor="#FFFFFF" borderColor="#FFFFFF" hilightColor="#E296C7" backgroundColor="#E7BBD5">SIGN UP</Button>
+                    </ButtonContainer>
+
+                    <ArtworkContainer>
+                      <Artwork slide="second"/>
+                    </ArtworkContainer>
+
+
+            </BottomLayer>
+
 
 
           </Background>

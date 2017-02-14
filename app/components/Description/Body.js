@@ -13,24 +13,32 @@ injectGlobal`
 
 
 const Body = styled.div`
-  width: 500px;
-  padding-left: 25px;
+  padding-left: 10px;
   padding-top: 20px;
-  letter-spacing: 1px;
-  line-height: 26px;
+  letter-spacing: 0.01px;
+  line-height: 19px;
   display: inline-block;
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -webkit-touch-callout: none;
   outline: 0;
-  font-size: 12pt;
+  font-size: 11pt;
   font-family: 'CircularBook','Helvetica Neue', Helvetica, Arial, sans-serif;
-  color: #C7B4AC;
+  color: ${(props) => props.color};
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin: 0 auto;
+  justify-content: left;
   transition: .3s;
+  @media(max-width: 1000px){
+    width: 400px;
+  }
+  @media(min-width: 1000px){
+    width: 500px;
+  }
+  @media(max-width: 700px){
+    font-size: 10pt;
+    width: 350px;
+  }
 
 `;
 

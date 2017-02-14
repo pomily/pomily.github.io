@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import NormalImg from 'components/Img';
 
 const Img = styled(NormalImg)`
-  height: 150px;
+  height: ${(props) => props.height}px;
   display: block;
   padding-top: 10px;
   z-index: 100;
