@@ -8,6 +8,7 @@ export default A;
 
 
 const ButtonText = styled.div`
+  background: ${(props) => props.backgroundColor};
   width: 100%;
   text-align: center;
   display: flex;

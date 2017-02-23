@@ -28,6 +28,8 @@ import ArtworkContainer from './ArtworkContainer';
 import Shape from 'components/Shape';
 import ShapeContainer from './ShapeContainer';
 
+import SignupForm from 'components/SignupForm';
+
 import ScrollLayer from './ScrollLayer';
 import ContentContainer from './ContentContainer';
 
@@ -66,6 +68,7 @@ export default class HomePage extends React.PureComponent { // eslint-disable-li
     this.hoverAnimation = this.hoverAnimation.bind(this);
     this.outAnimation = this.outAnimation.bind(this);
     this.changeSlide = this.changeSlide.bind(this);
+    this.animateSignUp = this.animateSignUp.bind(this);
   }
   updateDimensions() {
     this.setState({width: $(window).width()});
@@ -145,6 +148,13 @@ export default class HomePage extends React.PureComponent { // eslint-disable-li
   scrollAnimation(event){
     //alert("bye");
   }
+
+  animateSignUp(){
+    this.refs.btnLeft.hide();
+    this.refs.btnRight.hide();
+    this.refs.form.show();
+  }
+
   render() {
 
   	const href = '#';
@@ -243,8 +253,11 @@ export default class HomePage extends React.PureComponent { // eslint-disable-li
                   </DescriptionContainer>
 
                   <ButtonContainer onMouseOver={this.outAnimation}>
-                    <Button onClick={this.changeSlide} textColor="#FFFFFF" borderColor="#E5B5D1" hilightColor="#C78BB6" backgroundColor="#E5B5D1">MORE</Button>
-                    <Button textColor="#E5B5D1" borderColor="#E5B5D1" hilightColor="#F7E7F2" backgroundColor="#fffbf9">SIGN UP</Button>
+                    <Button onClick={this.changeSlide} ref="btnLeft"
+                            textColor="#FFFFFF" borderColor="#E5B5D1" hilightColor="#C78BB6" backgroundColor="#E5B5D1">MORE</Button>
+                    <Button onClick={this.animateSignUp} ref="btnRight"
+                            textColor="#E5B5D1" borderColor="#E5B5D1" hilightColor="#F7E7F2" backgroundColor="#fffbf9">SIGN UP</Button>
+                    <SignupForm ref="form" />
                   </ButtonContainer>
 
                   <ArtworkContainer>

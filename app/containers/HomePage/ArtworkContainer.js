@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 const ArtworkContainer = styled.div`
   position: fixed;
+  pointer-events: none;
   z-index: 2;
   display: flex;
   align-items: center;

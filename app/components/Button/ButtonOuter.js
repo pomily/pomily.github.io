@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 
 const ButtonOuter = styled.div`
-  position: relative;
+  /*position: relative;
   z-index = 1;
   width: 100%;
   text-align: center;
@@ -32,7 +32,9 @@ const ButtonOuter = styled.div`
   &:hover {
     border: 3px solid ${(props) => props.hilightColor};
     background: ${(props) => props.hilightColor};
-  }
+  }*/
+  border: 3px solid ${(props) => props.buttonColor};
+  background: ${(props) => props.backgroundColor};
 
   `;
 

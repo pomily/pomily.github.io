@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const ButtonContainer = styled.div`
   width: 100vw;
   height: 100px;
-  padding-top: 70px;
+  padding-top: 100px;
   display: flex;
   align-items: center;
   justify-content: left;

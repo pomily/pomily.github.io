@@ -17,19 +17,42 @@ import ButtonOuter from './ButtonOuter';
 import Img from './Img';
 
 
-function Button(props) {
+class Button extends React.Component{
+
+  constructor(props){
+    super(props);
+
+    this.hide = this.hide.bind(this);
+    this.slide = this.slide.bind(this);
+
+    this.state = {
+      opacity: 1,
+      transform: 10
+    }
+  }
+
+  hide(){
+    this.setState({opacity: 0});
+  }
+
+  slide(){
+    this.setState({transform: 30});
+  }
+
+  render(){
+
   // Render an anchor tag
   let button = (
-        <A href={props.href} onClick={props.onClick} onMouseOver={props.onMouseOver} id="a">
-            {Children.toArray(props.children)}
+        <A href={this.props.href} onClick={this.props.onClick} onMouseOver={this.props.onMouseOver} id="a">
+            {Children.toArray(this.props.children)}
         </A>
   );
 
   // If the Button has a handleRoute prop, we want to render a button
-  if (props.handleRoute) {
+  if (this.props.handleRoute) {
     button = (
-      <StyledButton buttonColor={props.color} onClick={props.handleRoute} id="b">
-        {Children.toArray(props.children)}
+      <StyledButton buttonColor={this.props.color} onClick={this.props.handleRoute} id="b">
+        {Children.toArray(this.props.children)}
       </StyledButton>
     );
   }
@@ -38,22 +61,24 @@ function Button(props) {
 
   var visible = "1";
 
-  if (!props.visible){
+  if (!this.props.visible){
     visible = "0";
   }
 
-  return (
-      <Wrapper>
-          <ButtonOuter buttonColor={props.borderColor} backgroundColor={props.backgroundColor} hilightColor={props.hilightColor}>
-             <A href={props.href} onClick={props.onClick} onMouseOver={props.onMouseOver} id="a">
-               <ButtonInner buttonColor={props.textColor} onClick={props.handleRoute} id="b">
-                 {Children.toArray(props.children)}
-               </ButtonInner>
-             </A>
-          </ButtonOuter>
-
-      </Wrapper>
-  );
+  var pEvents = this.state.opacity == 0 ? 'none' : 'auto';
+  
+    return (
+        <Wrapper opacity={this.state.opacity} style={{marginLeft: this.state.transform, pointerEvents: pEvents}}>
+            <ButtonOuter buttonColor={this.props.borderColor} backgroundColor={this.props.backgroundColor} hilightColor={this.props.hilightColor}>
+               <A href={this.props.href} onClick={this.props.onClick} onMouseOver={this.props.onMouseOver} id="a">
+                 <ButtonInner buttonColor={this.props.textColor} onClick={this.props.handleRoute} id="b">
+                   {Children.toArray(this.props.children)}
+                 </ButtonInner>
+               </A>
+            </ButtonOuter>
+        </Wrapper>
+    );
+  }
 }
 
 Button.propTypes = {

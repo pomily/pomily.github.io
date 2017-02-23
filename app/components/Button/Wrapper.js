@@ -7,9 +7,10 @@ const Wrapper = styled.div`
   align-self: flex-start;
   display: flex;
   align-items: center;
-  margin-left: 15px;
+  margin-left: 10px;
   margin-top: 10px;
   opacity: ${(props) => props.opacity};
+  transform: translateX(${(props) => props.transformLeft})px;
   transition: 1s;
   `;
 
