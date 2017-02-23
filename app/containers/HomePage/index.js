@@ -28,6 +28,9 @@ import ArtworkContainer from './ArtworkContainer';
 import Shape from 'components/Shape';
 import ShapeContainer from './ShapeContainer';
 
+import ScrollLayer from './ScrollLayer';
+import ContentContainer from './ContentContainer';
+
 import BottomLayer from './BottomLayer';
 import TopLayer from './TopLayer';
 
@@ -67,8 +70,36 @@ export default class HomePage extends React.PureComponent { // eslint-disable-li
   updateDimensions() {
     this.setState({width: $(window).width()});
   }
+  componentWillMount(){
+    //document.body.scrollTop = document.documentElement.scrollTop = 0;
+  }
+
   componentDidMount() {
       window.addEventListener('resize', () => this.forceUpdate())//triggers a state change whenever the display size is altered
+
+      //scrolling triggers
+      var lastScrollTop = 0;
+      var scrollDown = false;
+      window.addEventListener('scroll', function(){
+
+        var st = window.pageYOffset || document.documentElement.scrollTop;
+
+        //triggers slide changes only when scrolling direction changes
+        if (st > lastScrollTop){
+          if(!scrollDown){
+            this.changeSlide();
+            scrollDown = true;
+          }
+        } else {
+          if(scrollDown){
+            this.changeSlide();
+            scrollDown = false;
+          }
+        }
+        lastScrollTop = st;
+
+      }.bind(this));
+
   }
   hoverAnimation(){
     this.setState({hover: true});
@@ -112,7 +143,7 @@ export default class HomePage extends React.PureComponent { // eslint-disable-li
     }
   }
   scrollAnimation(event){
-    alert("bye");
+    //alert("bye");
   }
   render() {
 
@@ -179,29 +210,33 @@ export default class HomePage extends React.PureComponent { // eslint-disable-li
       }
       else{
         if (this.state.slide ==  0)
-          maskPosition = "-5%";
+          maskPosition = "3%";
         else
           maskPosition = "100%";
       }
     }
-    window.onscroll = function() {alert("hi")};
 
     return (
+
     	<article>
+
     		<Helmet
     			title="Pomily"
     			meta={[
     				{ name: 'description', content: 'Cosmetics Ecommerce' }
-    			]}
-    		/>
+    			]}/>
     		<div>
+
           <Background opacity={this.state.backgroundOpacity}>
 
-            <TopLayer opacity={this.state.topVisiblity} mask={maskImage} maskPosition={maskPosition} onScroll={this.scrollAnimation}>
+            <HeaderContainer>
+              <HeaderBar/>
+            </HeaderContainer>
 
-                  <HeaderContainer>
-                     <HeaderBar/>
-                  </HeaderContainer>
+            {/*<ScrollLayer />*/}
+
+            <ContentContainer>
+            <TopLayer opacity={this.state.topVisiblity} mask={maskImage} maskPosition={maskPosition}>
 
                   <DescriptionContainer onMouseOver={this.outAnimation}>
                      <Description slide="first" />
@@ -216,14 +251,9 @@ export default class HomePage extends React.PureComponent { // eslint-disable-li
                     <Artwork slide="first"/>
                   </ArtworkContainer>
 
-
             </TopLayer>
 
             <BottomLayer  >
-
-                    <HeaderContainer>
-                       <HeaderBar/>
-                    </HeaderContainer>
 
                     <DescriptionContainer onMouseOver={this.outAnimation}>
         			         <Description slide="second"/>
@@ -241,10 +271,9 @@ export default class HomePage extends React.PureComponent { // eslint-disable-li
 
             </BottomLayer>
 
-
+            </ContentContainer>
 
           </Background>
-
 
     		</div>
     	</article>

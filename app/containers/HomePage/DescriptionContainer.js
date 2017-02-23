@@ -12,7 +12,7 @@ const DescriptionContainer = styled.div`
   }
   @media(max-width: 700px){
     margin-top: 32vh;
-    margin-left: 0vw;
+    margin-left: -20px;
 
     @media(max-height: 600px){
         margin-top: 32vh;

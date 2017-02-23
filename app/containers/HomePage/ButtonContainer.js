@@ -10,7 +10,7 @@ const ButtonContainer = styled.div`
   margin-left: 15vw;
   @media(max-width: 700px){
     padding-top: 40px;
-    margin-left: 0vw;
+    margin-left: -20px;
     transform: scale(.8,.8);
   }
   z-index: 100;
