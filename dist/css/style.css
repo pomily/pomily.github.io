@@ -245,6 +245,9 @@ body {
     margin-right: 15px;
     height: 35px;
 }
+button {
+	background-color: transparent;
+}
 
 .btn{
   display: inline-block;
