@@ -48,11 +48,16 @@
             <div class="col-md-5 col-sm-8 col-xs-10 pull-md-6" style="margin-top: 20px">
               <h2 class="featurette-heading m-b-30 slide-left-subtle first purple">Share the joy of makeup</h2>
               <p class="fade-subtle sienna">Lorem ipsum dolor sit amet, cum noster erroribus no, at est volumus delicata, ei vim veritus necessitatibus. Ei ferri noster his.</p>
+              <div class="submitted" style="display: none;">
+                <h1 class="featurette-heading m-b-30 fade-subtle first purple">Thanks for your interest!</h1>
+                <p class="fade-subtle sienna">Stay tuned for exciting updates</p>
+              </div>
+              <br>
               <div style="margin-top: 20px">
-								<form id="gform" method="POST" action="https://script.google.com/macros/s/AKfycbztRwA93Et_OFYpHRn4Y4uWGPGakxMDpWcbc5kMgnfcCjKZwdke/exec">
-									<input id="email" name="email" placeholder="Enter your email" class = "signup-input" style="display: inline-block"/>
-									<button type="submit" style="display: inline-block" class="btn">SIGN UP</button>
-								</form>
+								<form id="gform" method="POST" action="https://script.google.com/macros/s/AKfycbztRwA93Et_OFYpHRn4Y4uWGPGakxMDpWcbc5kMgnfcCjKZwdke/exec" target="hidden" onSubmit="$('.submitted').css('display', 'block'); $('form#gform').css('display', 'none');" style="display: inline-block;">
+                  <input id="email" name="email" placeholder="Enter your email" class = "signup-input" style="display: inline-block"/>
+                  <button type="submit" style="display: inline-block" class="btn">SIGN UP</button>
+                </form>
 							</div>
 						</div>
 					</div>
@@ -158,13 +163,13 @@
 		<div class="container" style="height: 100px;">
 			<!-- FOOTER -->
 			<footer>
-        <div id="submitted" style="display: none; text-align: center;">
+        <div class="submitted" style="display: none; text-align: center;">
           <h1 class="featurette-heading m-b-30 fade-subtle first purple">Thanks for your interest!</h1>
           <p class="fade-subtle sienna">Stay tuned for exciting updates</p>
         </div>
         <br>
 				<div style="margin-bottom: 40px; display: flex; justify-content: center; align-items:center; ">
-					<form id="gform" method="POST" action="https://script.google.com/macros/s/AKfycbztRwA93Et_OFYpHRn4Y4uWGPGakxMDpWcbc5kMgnfcCjKZwdke/exec" target="hidden" onSubmit="$('#submitted').css('display', 'block'); $('html, body').animate({ scrollTop: $(document).height() }, 'slow'); $('form#gform').css('display', 'none');" style="display: inline-block;">
+					<form id="gform" method="POST" action="https://script.google.com/macros/s/AKfycbztRwA93Et_OFYpHRn4Y4uWGPGakxMDpWcbc5kMgnfcCjKZwdke/exec" target="hidden" onSubmit="$('.submitted').css('display', 'block'); $('html, body').animate({ scrollTop: $(document).height() }, 'slow'); $('form#gform').css('display', 'none');" style="display: inline-block;">
 						<input id="email" name="email" placeholder="Enter your email" class = "signup-input" style="display: inline-block"/>
 						<button type="submit" style="display: inline-block" class="btn">SIGN UP</button>
 					</form>
