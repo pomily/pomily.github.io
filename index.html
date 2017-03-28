@@ -158,11 +158,17 @@
 		<div class="container" style="height: 100px;">
 			<!-- FOOTER -->
 			<footer>
+        <div id="submitted" style="display: none; text-align: center;">
+          <h1 class="featurette-heading m-b-30 fade-subtle first purple">Thanks for your interest!</h1>
+          <p class="fade-subtle sienna">Stay tuned for exciting updates</p>
+        </div>
+        <br>
 				<div style="margin-bottom: 40px; display: flex; justify-content: center; align-items:center; ">
-					<form id="gform" method="POST" action="https://script.google.com/macros/s/AKfycbztRwA93Et_OFYpHRn4Y4uWGPGakxMDpWcbc5kMgnfcCjKZwdke/exec">
+					<form id="gform" method="POST" action="https://script.google.com/macros/s/AKfycbztRwA93Et_OFYpHRn4Y4uWGPGakxMDpWcbc5kMgnfcCjKZwdke/exec" target="hidden" onSubmit="$('#submitted').css('display', 'block'); $('html, body').animate({ scrollTop: $(document).height() }, 'slow'); $('form#gform').css('display', 'none');" style="display: inline-block;">
 						<input id="email" name="email" placeholder="Enter your email" class = "signup-input" style="display: inline-block"/>
 						<button type="submit" style="display: inline-block" class="btn">SIGN UP</button>
 					</form>
+          <iframe name="hidden" width="0" height="0" border="0" style="display: none;"></iframe>
 				</div>
 				<p class="pull-xs-right"><a href="#">Back to top</a></p>
 				<p class="sienna">&copy; 2017 Pomily</p>
