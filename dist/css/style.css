@@ -22,36 +22,26 @@
 // –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 h2 {
-  font-family: 'Circular Medium' !important;
-  color: #BE9BBB;
-  letter-spacing: .5px;;
-}
-
-h3{
-  font-family: 'Circular Medium' !important;
-  color: #ffffff;
-  letter-spacing: .5px;;
+  font-family: 'Circular Medium';
+  letter-spacing: .5px;
 }
 
 body {
   position: relative;
   padding-bottom: 3rem;
-}
-
-.purple{
-  color: #BE9BBB;
-}
-
-.sienna{
-  color: #C7B4AC;
+  color: #2B2B2B;
 }
 
 .white{
-  color: #ffffff;
+  color: #FFFFFF;
 }
 
-.brown{
-  color: #6A5555;
+a {
+  color: #EC2F37;
+}
+
+a:hover {
+  color: #EC2F37;
 }
 
 /* –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -67,7 +57,7 @@ body {
 }
 
 .navbar-border {
-  border-bottom: 1px solid #e4e4e4;
+  border-bottom: 1px solid #E4E4E4;
 }
 
 .navbar-default {
@@ -75,7 +65,7 @@ body {
 }
 
 .navbar-color {
-  background-color: #FEFAF9;
+  background-color: #FFFFFF;
 }
 
 .navbar-brand {
@@ -94,11 +84,11 @@ body {
 }
 
 .nav-link {
-  color: #FFF;
+  color: #FFFFFF;
 }
 
 .navbar-link-blue {
-  color: #0275d8;
+  color: #0275D8;
 }
 
 .navbar-nav {
@@ -123,120 +113,12 @@ body {
 }
 
 /* –––––––––––––––––––––––––––––––––––––––––––––––––– */
-/* Pricing Section
-// –––––––––––––––––––––––––––––––––––––––––––––––––– */
-
-#pricing {
-  margin: -5rem 0;
-  background-color: #f8f8f8;
-}
-
-#pricing .price-box {
-  background-color: #fff;
-  text-align: center;
-  padding: 30px;
-  margin-bottom: 40px;
-  position: relative;
-  -webkit-box-shadow: 0px 0px 35px 10px rgba(0, 0, 0, 0.04) !important;
-  box-shadow: 0px 0px 35px 10px rgba(0, 0, 0, 0.04) !important;
-}
-
-#pricing .price-box.popular {
-  background-image: url("../../images/premium-tag.svg");
-  -webkit-background-size: 200px 200px;
-          background-size: 200px;
-  background-repeat: no-repeat;
-  background-position: 50% 0;
-  width: 100%;
-  text-align: center;
-}
-
-#pricing .price-box.popular .popular-text {
-  letter-spacing: 2px;
-  position: absolute;
-  color: #FFF;
-  text-transform: uppercase;
-  width: 100%;
-  text-align: center;
-  font-family: 'Circular Bold' !important;
-  top: 10px;
-  right: 0;
-}
-
-#pricing .pricing-plan {
-  margin: 0;
-  padding: 0;
-  font-size: 17px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  font-family: 'Circular Bold' !important;
-}
-
-#pricing .price {
-  font-size: 50px;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 300;
-  letter-spacing: 5px;
-}
-
-#pricing .price .currency {
-  font-size: 20px;
-  top: -1.2em;
-}
-
-#pricing .price small {
-  font-size: 16px;
-}
-
-#pricing .pricing-info {
-  padding: 0;
-  margin: 0 0 30px 0;
-}
-
-#pricing .pricing-info li {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  text-align: center;
-}
-
-.pricing-heading {
-  font-weight: 300;
-  line-height: 1;
-  letter-spacing: -.05rem;
-  margin-top: 5rem;
-}
-
-/* –––––––––––––––––––––––––––––––––––––––––––––––––– */
 /* Buttons
 // –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
-.button-free {
-  font-family: 'Circular Bold';
-  border: 1px solid #BE9BBB !important;
-  background-color: #fff;
-  border-width: 1px;
-  border-radius: 4px;
-  width: 150px;
-  color: #BE9BBB;
-  margin-bottom: 20px;
-}
-
-.button-premium {
-  background-color: #BE9BBB;
-  color: #fff;
-  width: 150px;
-  margin-bottom: 20px;
-  border-radius: 4px;
-}
-
-.pricing-icon {
-  margin-top: 25px;
-}
-
 .signup-input{
     width: 220px;
-    border-bottom: solid #BE9BBB 1px;
+    border-bottom: solid #EC2F37 1px;
     outline: none;
     outline-style: none;
     border-top: none;
@@ -249,24 +131,23 @@ button {
 	background-color: transparent;
 }
 
-.btn{
+.btn {
   display: inline-block;
   box-sizing: border-box;
   text-decoration: none;
   outline: 0;
   letter-spacing: 2px;
   font-family: 'Circular Bold','Helvetica Neue', Helvetica, Arial, sans-serif;
-  color: #BE9BBB;
+  color: #;
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center
+  text-align: center;
   transition: .3s;
   font-size: 11px;
   width: 110px;
-  border: 2px solid #BE9BBB;
-  /*margin-top: 20px;*/
-
+  border: 2px solid #EC2F37;
+  color: #EC2F37;
 }
 
 @media(max-width: 925px){
@@ -360,33 +241,6 @@ button {
   max-width: 1140px;
 }
 
-/*@media (min-width: 544px) {
-  .wrapper {
-    max-width: 576px;
-  }
-}
-
-@media (min-width: 768px) {
-  .wrapper {
-    max-width: 720px;
-  }
-}
-
-@media (min-width: 992px) {
-  .wrapper {
-    max-width: 940px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .wrapper {
-    max-width: 1140px;
-  }
-}*/
-
-
-
-
 /* –––––––––––––––––––––––––––––––––––––––––––––––––– */
 /* Responsive css
 // –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -457,8 +311,8 @@ button {
 /* –––––––––––––––––––––––––––––––––––––––––––––––––– */
 /* Bg
 // –––––––––––––––––––––––––––––––––––––––––––––––––– */
-#pink-bg{
-  background-color: #EEC3D3;
+#red-bg{
+  background-color: #EC2F37;
 }
 
 #white-mask{
@@ -467,6 +321,7 @@ button {
   background-image: url("../../img/white-mask.svg");
   background-size: cover;
   top: -110px;
+  pointer-events: none;
 }
 
 @media(max-width: 1000px){
@@ -493,6 +348,7 @@ button {
   background-image: url("../../img/white-mask2.svg");
   background-size: cover;
   top: 300px;
+  pointer-events: none;
 }
 
 /* –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -564,7 +420,6 @@ button {
   }
 }
 
-
 .banner-logo {
   margin-top: -20px;
   left: -20px !important;
@@ -577,8 +432,7 @@ button {
   left: 0%;
   z-index: 10;
   padding-top: 0;
-  padding-bottom: 10% !important;
-  color: #fff;
+  padding-bottom: 10%;
   z-index: 0;
 
 }
@@ -589,26 +443,17 @@ button {
   top: 470px;
   left: 0%;
   z-index: 10;
-  color: #fff;
-  background-color: #fff;
+  background-color: #FFFFFF;
   width: 80%;
   padding-top: 100px;
   padding-bottom: 100px;
-  -webkit-box-shadow: 3px 3px 3px 3px rgba(204, 194, 183, 0.5);
-  box-shadow: 3px 3px 3px 3px rgba(204, 194, 183, 0.5);
+  box-shadow: 2px 2px 16px 0 rgba(0, 0, 0, 0.125);
 
 }
-
 
 /* –––––––––––––––––––––––––––––––––––––––––––––––––– */
 /* Demo Section
 // –––––––––––––––––––––––––––––––––––––––––––––––––– */
-
-/*#demo-bg-wrapper{
-  z-index: -4;
-  position: absolute;
-  bottom: 0;
-}*/
 
 #demo-section{
   width: 100% !important;
