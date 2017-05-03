@@ -69,18 +69,10 @@ a:hover {
 }
 
 .navbar-brand {
-  -webkit-background-size: cover;
-          background-size: cover;
+  background-size: cover;
   width: 140px;
   height: 42.5px;
-}
-
-.navbar-image {
-  background-image: url("../../img/logo.svg");
-  -webkit-background-size: cover;
-          background-size: cover;
-  background-position: 10% 40% !important;
-  transform: scale(.8,.8);
+  object-fit: contain;
 }
 
 .nav-link {
@@ -312,7 +304,7 @@ button {
 /* Bg
 // –––––––––––––––––––––––––––––––––––––––––––––––––– */
 #red-bg{
-  background-color: #EC2F37;
+  background-color: #FE525B;
 }
 
 #white-mask{
