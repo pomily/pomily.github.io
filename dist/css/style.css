@@ -238,6 +238,7 @@ button {
 
 .wrapper {
   max-width: 1140px;
+  margin: auto;
 }
 
 /* –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -315,25 +316,25 @@ button {
   z-index: 2;
   background-image: url("../../img/white-mask.svg");
   background-size: cover;
-  top: -110px;
+  top: -50px;
   pointer-events: none;
 }
 
 @media(max-width: 1000px){
     #white-mask{
-      top: -100px;
+      top: -50px;
     }
 }
 
 @media(max-width: 768px){
     #white-mask{
-      top: -80px;
+      top: -50px;
     }
 }
 
 @media(max-width: 500px){
     #white-mask{
-      top: -200px;
+      top: -50px;
     }
 }
 
@@ -366,12 +367,10 @@ button {
 /* Panel Section
 // –––––––––––––––––––––––––––––––––––––––––––––––––– */
 #panel-section{
-  position: relative
+  position: relative;
   z-index: 1;
   padding-bottom: 8rem;
-  /*background-image: url("../../img/pink-mask.svg");
-  background-size: cover;
-  background-position: 0% -50%;*/
+  margin: auto;
 }
 
 .panel-art{
