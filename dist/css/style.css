@@ -1,34 +1,22 @@
 /* –––––––––––––––––––––––––––––––––––––––––––––––––– */
 /* Fonts
 // –––––––––––––––––––––––––––––––––––––––––––––––––– */
-
-@font-face {
-  font-family: 'Circular Bold';
-  src: url(../../fonts/CircularStd-Bold.otf);
-}
-
-@font-face {
-  font-family: 'Circular Medium';
-  src: url(../../fonts/CircularStd-Medium.otf);
-}
-
-@font-face {
-  font-family: 'Circular Book';
-  src: url(../../fonts/CircularStd-Book.otf);
-}
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
 
 /* –––––––––––––––––––––––––––––––––––––––––––––––––– */
 /* Common typography
 // –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 h2 {
-  font-family: 'Circular Medium';
+  font-family: 'Lato', sans-serif;
+	font-weight: 700;
   letter-spacing: .5px;
   font-size: 30px;
 }
 
 h4 {
-  font-family: 'Circular Medium';
+  font-family: 'Lato', sans-serif;
+	font-weight: 700;
   letter-spacing: .5px;
   font-size: 20px;
 }
@@ -37,6 +25,7 @@ body {
   position: relative;
   padding-bottom: 3rem;
   color: #2B2B2B;
+	font-family: 'Lato', sans-serif;
 }
 
 .white{
@@ -136,8 +125,8 @@ button {
   text-decoration: none;
   outline: 0;
   letter-spacing: 2px;
-  font-family: 'Circular Bold','Helvetica Neue', Helvetica, Arial, sans-serif;
-  color: #;
+  font-family: 'Lato', sans-serif;
+	font-weight: 700;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -164,36 +153,36 @@ button {
   width: 350px !important;
   background-color: #ffb847;
   border-radius: 40px !important;
-  font-family: "Circular Bold";
+  font-family: 'Lato', sans-serif;
   color: #fff;
   -webkit-transition: background-color 0.5s, width 0.3s;
   -o-transition: background-color 0.5s, width 0.3s;
   transition: background-color 0.5s, width 0.3s;
-  -webkit-transition-timing-function: eaze-in;
-       -o-transition-timing-function: eaze-in;
-          transition-timing-function: eaze-in;
+  -webkit-transition-timing-function: ease-in;
+       -o-transition-timing-function: ease-in;
+          transition-timing-function: ease-in;
 }
 
 .btn-header:hover {
   width: 400px !important;
   background-color: #f9a347;
   border-radius: 40px;
-  font-family: "Circular Bold";
-  color: #fff;
+  font-family: 'Lato', sans-serif;
+  color: #ffffff;
 }
 
 .btn-header:focus {
   width: 350px !important;
   background-color: #ffb847;
   border-radius: 40px !important;
-  font-family: "Circular Bold";
-  color: #fff;
+  font-family: 'Lato', sans-serif;
+  color: #ffffff;
   -webkit-transition: background-color 0.5s, width 0.3s;
   -o-transition: background-color 0.5s, width 0.3s;
   transition: background-color 0.5s, width 0.3s;
-  -webkit-transition-timing-function: eaze-in;
-       -o-transition-timing-function: eaze-in;
-          transition-timing-function: eaze-in;
+  -webkit-transition-timing-function: ease-in;
+       -o-transition-timing-function: ease-in;
+          transition-timing-function: ease-in;
 }
 
 
@@ -255,7 +244,7 @@ button {
 @media (max-width: 40rem) {
   .hero-title {
     font-size: 2.5rem;
-    font-family: 'Circular Bold' !important;
+    font-family: 'Lato', sans-serif;
   }
   .carousel-caption {
     position: absolute;
@@ -270,7 +259,7 @@ button {
 @media (min-width: 40em) {
   .hero-title {
     font-size: 3rem;
-    font-family: 'Circular Medium' !important;
+    font-family: 'Lato', sans-serif;
   }
   /* Bump up size of carousel content */
   .carousel-caption p {
@@ -282,7 +271,7 @@ button {
 @media (min-width: 62em) {
   .hero-title {
     font-size: 3.5rem;
-    font-family: 'Circular Medium' !important;
+    font-family: 'Lato', sans-serif;
   }
   .carousel-caption {
     right: 20% !important;
