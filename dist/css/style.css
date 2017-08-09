@@ -412,8 +412,8 @@ button {
   right: 0%;
   left: 0%;
   z-index: 10;
-  padding-top: 100px;
-  padding-bottom: 10%;
+  padding-top: 24px;
+  padding-bottom: 24px;
   z-index: 0;
   height: 100%;
   background: rgba(128, 128, 128, 0.75);
