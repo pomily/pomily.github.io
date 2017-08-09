@@ -9,14 +9,14 @@
 
 h2 {
   font-family: 'Lato', sans-serif;
-	font-weight: 700;
+  font-weight: 700;
   letter-spacing: .5px;
   font-size: 30px;
 }
 
 h4 {
   font-family: 'Lato', sans-serif;
-	font-weight: 700;
+  font-weight: 700;
   letter-spacing: .5px;
   font-size: 20px;
 }
@@ -25,7 +25,7 @@ body {
   position: relative;
   padding-bottom: 3rem;
   color: #2B2B2B;
-	font-family: 'Lato', sans-serif;
+  font-family: 'Lato', sans-serif;
 }
 
 .white{
@@ -126,14 +126,13 @@ button {
   outline: 0;
   letter-spacing: 2px;
   font-family: 'Lato', sans-serif;
-	font-weight: 700;
+  font-weight: 700;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   transition: .3s;
   font-size: 11px;
-  width: 110px;
   border: 2px solid #EC2F37;
   color: #EC2F37;
 }
