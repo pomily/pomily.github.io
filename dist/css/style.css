@@ -362,8 +362,8 @@ button {
 }
 
 .panel-art{
-  min-width: 400px;
-  transform: translate(0,-10px);
+  min-width: 700px;
+  transform: translate(-80px,-10px);
 }
 
 @media(max-width: 500px){
