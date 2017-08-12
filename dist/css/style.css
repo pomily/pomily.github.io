@@ -143,6 +143,7 @@ button {
   }
   .btn{
     margin-top: 20px;
+    width: 100%;
   }
 }
 
@@ -236,7 +237,7 @@ button {
 
   p {
     font-size: 1rem;
-    line-height: 1.5rem;
+    line-height: 1.5rem !important;
   }
 }
 
